@@ -776,6 +776,7 @@ body.menu-open .card-inner {
 
         .card:hover .card-link::after {
         transition: none;
+        pointer-events: none;
     }
 
     .card-link::after {
