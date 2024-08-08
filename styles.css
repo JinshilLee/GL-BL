@@ -664,6 +664,7 @@ body.menu-open .card-inner {
     opacity: 0.5;
 }
 
+
 .highlight-credits {
     position: relative;
     font-family: "home-video";
@@ -761,16 +762,24 @@ body.menu-open .card-inner {
     }
 
 }
-    
+
 @media (orientation: portrait) {
-    
+
     .card-inner {
-        transition: none; /* Disable transition */
+        transition: none;
         transform: none;
     }
 
     .card:hover .card-inner {
-        transform: none; /* Prevent flipping */
-        transitions: none;
+        transform: none;
+        transition: none;
+    }
+
+    .card:hover .card-link::after {
+        transition: none;
+    }
+
+    .card-link::after {
+        width: 100%;
     }
 }
