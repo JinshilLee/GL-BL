@@ -768,11 +768,7 @@ body.menu-open .card-inner {
         transition: none;
     }
 
-    .card:hover .card-inner {
-        transition: none;
-    }
-
-    .card-link::after {
+    .card-link {
         width: 100%;
     }
 }
