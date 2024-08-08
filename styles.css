@@ -1,0 +1,811 @@
+@font-face {
+    font-family: "home-video";
+    src: url("Assets/homevideo.ttf");
+}
+
+@font-face {
+    font-family: "special-gothic";
+    src: url("Assets/SpecialGothic-ExtendedBold.ttf");
+}
+
+body::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+body.blur .dropdown, 
+body.blur .dropdown-roster {
+    filter: none; /* Ensure no blur effect */
+}
+
+html, body, .border {
+    height: 100%;
+    margin: 5px;
+    font-family: Arial, sans-serif; /* Fallback font */
+    background-color: black;
+}
+
+.home-spacing {
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body::after{
+    content: '';
+    background-image: url(https://thumbs.dreamstime.com/b/white-noise-background-effect-sound-effect-grain-distress-overlay-texture-your-design-grainy-gradient-background-145456887.jpg);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:0.1;
+    z-index: 999;
+    pointer-events:none;
+}
+
+.border {
+    padding: 0 -5px 40px -5px;
+    border-radius: 20px;
+    border: 4px solid beige;
+    position: relative;
+    z-index: 3;
+}
+
+.border-home {
+    margin-left: 0;
+    margin-right: 0;
+    height: 100%;
+    border-radius: 20px;
+    border: 4px solid #f5f5dc;
+    position: relative;
+    z-index: 3;
+    filter: brightness(100%);
+}
+
+.border-roster {
+    margin: 0;
+    padding: 0 0 4Animations/Javascript for Enter Button, background, and all text.0px 0;
+    border-radius: 20px;
+    border: 4px solid beige;
+    position: relative;
+    z-index: 3;
+}
+
+.border-bio {
+    margin: 0;
+    padding: 0 0 40px 0;
+    border-radius: 20px;
+    border: 4px solid beige;
+    position: relative;
+    z-index: 3;
+}
+
+.border-spacing {
+    margin: 1px;
+    border-radius: 20px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes logo-spinning {
+    0% {opacity: 0;}
+    100% {opacity: 0.5;}
+}
+
+#logo-spinning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    opacity: 0.5;
+    border-radius: 20px;
+    animation-name: logo-spinning;
+    animation-duration: 4s;
+}
+
+p {
+    font-family: "home-video", Arial, sans-serif;
+    color: white;
+    position: relative;
+    z-index: 2;
+    padding-left: 20px;
+    font-size: 13px;
+    opacity: 0;
+}
+
+.bottom-right {
+    position:absolute;
+    bottom:0;
+    right:20px;
+}
+
+p.visible {
+    opacity: 1;
+}
+
+.loading-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: center;
+    border: 2px solid beige;
+    border-radius: 10px;
+}
+
+.loading-bar {
+    width: 30vw;
+    background-color: black;
+    border: 1px solid beige;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 10px 0 10px;
+}
+
+.loading-progress {
+    height: 20px;
+    width: 0;
+    background-color: beige;
+    border-radius: 5px;
+    animation: stutteryProgress 60s steps(10) forwards; /* Animation duration and steps */
+}
+
+@keyframes stutteryProgress {
+    0% {
+        width: 0;
+    }
+    10% {
+        width: 10%;
+    }
+    20% {
+        width: 20%;
+    }
+    30% {
+        width: 30%;
+    }
+    40% {
+        width: 40%;
+    }
+    50% {
+        width: 50%;
+    }
+    60% {
+        width: 60%;
+    }
+    70% {
+        width: 70%;
+    }
+    80% {
+        width: 80%;
+    }
+    90% {
+        width: 90%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.loading-text {
+    margin: 10px 0 10px 0;
+    font-family: "home-video";
+    color: white;
+    font-size: 13px;
+}
+
+.dropbtn {
+    color: white;
+    font-family: "home-video";
+    padding: 16px;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent; /* Remove background color */
+    position: relative; /* Fix the button in place */
+    top: 5px; /* Position from the top */
+    right: 15px; /* Position from the right */
+    z-index: 3; /* Ensure the button is above other elements */
+}
+
+.dropbtn-roster {
+    color: white;
+    font-family: "home-video";
+    padding: 16px;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent; /* Remove background color */
+    position: relative; /* Fix the button in place */
+    top: -5px; /* Position from the top */
+    right: 5px; /* Position from the right */
+    z-index: 3; /* Ensure the button is above other elements */
+}
+
+.dropbtn-tsurreal {
+    color: white;
+    font-family: "home-video";
+    padding: 16px;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent; /* Remove background color */
+    position: relative; /* Fix the button in place */
+    top: -5px; /* Position from the top */
+    right: 5px; /* Position from the right */
+    z-index: 3; /* Ensure the button is above other elements */
+}
+
+.dropdown {
+    position: absolute; /* Fix the dropdown container in place */
+    top: 10px; /* Align with the button */
+    right: 10px; /* Align with the button */
+    z-index: 3; /* Ensure the dropdown content is above other elements */
+}
+
+.dropbtn.active {
+    color: grey; /* Color of the button when the menu is open */
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-left: 76px;
+    padding-bottom: 6.5px;
+    padding-top: 5px;
+    margin-top: 11px;
+}
+
+.dropbtn-tsurreal.active {
+    color: grey; /* Color of the button when the menu is open */
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-left: 76px;
+    padding-bottom: 6.5px;
+    padding-top: 5px;
+    margin-top: 11px;
+}
+
+.dropbtn-roster.active {
+    color: grey; /* Color of the button when the menu is open */
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-left: 76px;
+    padding-bottom: 6.5px;
+    padding-top: 5px;
+    margin-top: 11px;
+}
+
+
+.dropdown-content {
+    display: none;
+    text-align: right;
+    position: absolute; /* Position the dropdown content relative to .dropdown */
+    top: 50px; /* Position directly below the button */
+    right: 15px; /* Align with the right edge of the button */
+    min-width: 150px; /* Set a minimum width for the dropdown */
+    z-index: 1000; /* Ensure the dropdown menu is above other elements */
+    background-color: rgba(0, 0, 0, 0.6);
+    border-bottom-left-radius: 10px;
+}
+
+.dropdown-content-roster {
+    display: none;
+    text-align: right;
+    position: absolute; /* Position the dropdown content relative to .dropdown */
+    top: 40px; /* Position directly below the button */
+    right: 5px; /* Align with the right edge of the button */
+    min-width: 160px; /* Set a minimum width for the dropdown */
+    z-index: 1000; /* Ensure the dropdown menu is above other elements */
+    background-color: rgba(0, 0, 0, 0.6);
+    border-bottom-left-radius: 10px;
+    
+}
+
+.dropdown-content-tsurreal {
+    display: none;
+    text-align: right;
+    position: absolute; /* Position the dropdown content relative to .dropdown */
+    top: 40px; /* Position directly below the button */
+    right: 5px; /* Align with the right edge of the button */
+    min-width: 160px; /* Set a minimum width for the dropdown */
+    z-index: 1000; /* Ensure the dropdown menu is above other elements */
+    background-color: rgba(0, 0, 0, 0.6);
+    border-bottom-left-radius: 10px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    font-family: "home-video";
+    text-decoration: none;
+    display: block;
+    font-size: 25px;
+}
+
+.dropdown-content-roster a {
+    color: white;
+    padding: 12px 16px;
+    font-family: "home-video";
+    text-decoration: none;
+    display: block;
+    font-size: 25px;
+}
+
+.dropdown-content-tsurreal a {
+    color: white;
+    padding: 12px 16px;
+    font-family: "home-video";
+    text-decoration: none;
+    display: block;
+    font-size: 25px;
+}
+
+.show {
+    display: block;
+}
+
+body.blur > *:not(.dropdown):not(.dropdown-roster) {
+    filter: blur(5px); /* Adjust the blur intensity as needed */
+    transition: filter 0.3s ease; /* Smooth transition */
+}
+
+.menu-item {
+    position: relative;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    font-family: "home-video";
+    opacity: 0; /* Hide initially */
+}
+
+.menu-item::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    left: 0;
+    bottom: 7px; /* Adjust to position the underline */
+    width: 0;
+    background: white;
+    transition: width 0.2s;
+}
+
+.menu-item:hover::after {
+    width: 100%;
+}
+
+.menu-item.visible {
+    opacity: 1;
+}
+
+.card-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px; /* Space between cards */
+    justify-content: center;
+    padding-top: 60px;
+    z-index: 3;
+}
+
+.card {
+    width: 210px;
+    height: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+    perspective: 1000px; /* Gives a 3D effect */ 
+    padding-bottom: 20px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: beige;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.card-back {
+    background-color: beige;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+/* Flip effect */
+.card:hover .card-inner{
+    transform: rotateY(180deg);
+}
+
+.img-card {
+    width: 190px;
+    height: 280px;
+    border: 3px solid black;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.card-name-front {
+    position: absolute;
+    font-family: "special-gothic";
+    font-size: 18px;
+    color: black; /* Adjust the color as needed */
+    bottom: -3px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    z-index: 3;
+    width: 190px;
+}
+
+.card-name-back {
+    position: absolute;
+    font-family: "special-gothic";
+    font-size: 18px;
+    color: black; /* Adjust the color as needed */
+    top: 10px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 190px;
+    z-index: 3;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin: 0;
+}
+
+h2 {
+    position: absolute;
+    font-weight: 10;
+    font-size: 13px;
+    color: white;
+    background-color: black;
+    font-family: "home-video";
+    padding: 2px 5px 2px 5px;
+    top: 33px;
+}
+
+.card-text {
+    position: relative;
+    color: black;
+    font-size: 10px;
+    font-family: "home-video";
+    padding-left: 5px;
+    top: -3px;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 7px;
+    background-color: black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 190px;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.link-img {
+    gap: 80px;
+    width: 50px;
+    height: 50px;
+}
+
+body.menu-open .card-inner {
+    transition: none; /* Disable the flip transition */
+}
+
+.no-flip {
+    pointer-events: none; /* Disable the flip transition */
+}
+
+.card-link {
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+}
+
+.card-link::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: 2px;
+    width: 0;
+    background: rgb(255, 255, 255);
+    transition: width .8s;
+}
+
+.card:hover .card-link::after {
+    width: 100%;
+}
+
+.card-back-border {
+    height: 280px;
+    width: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 0;
+}
+
+.flipcard-link {
+    display: flex; /* Make the link a block-level element to encompass the flipcard */
+    position: relative;
+    text-decoration: none; /* Remove underline from the link */
+    z-index: 3;
+}
+
+.bio-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50px;
+    height: auto;
+    max-width: 80%; /* Limit the width to 80% of the container */
+    margin: 0 auto; /* Center the .bio-box within its parent */
+}
+
+.bio-img {
+    height: 300px;
+    width: 300px;
+    margin-top: 55px;
+    border-radius: 10px;
+    border: 4px solid beige;
+    object-fit: cover;
+    
+}
+
+.about-img {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    border: 4px solid beige;
+    object-fit: cover;
+}
+
+.abt-img-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px; /* Space between cards */
+    justify-content: center; /* Aligns the top of the images */
+    margin-top: 15px;
+}
+
+.bio {
+    position: relative;
+    font-family: "home-video";
+    color: white;
+    font-weight: 10;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.bio-links {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 190px;
+    flex-wrap: wrap;
+    gap: 7px;
+    position: relative;
+    bottom: -35px;
+    padding-top: 10px;
+}
+
+.bio-link-img {
+    gap: 80px;
+    width: 50px;
+    height: 50px;
+}
+
+.return-button {
+    font-family: "home-video";
+    color: white;
+    font-size: 25px;
+    font-weight: 10;
+    margin: 0;
+    padding-top: 17px;
+    padding-left: 25px;
+}
+
+.return-button-link {
+    text-decoration: none;
+    color: white;
+}
+
+.background-img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 450px;
+    width: 450px;
+}
+
+.background-img-about {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 450px;
+    width: 450px;
+    opacity: 0.5;
+}
+
+
+.highlight-credits {
+    position: relative;
+    font-family: "home-video";
+    font-size: 12px;
+    color: white;
+    font-weight: 10;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.highlight-credits-back {
+    font-size: 14px;
+    font-weight: 200;
+    color: black;
+    background-color: white;
+    padding: 2px;
+}
+
+.corner-image {
+    position: absolute; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+    z-index: 1000; /* Ensure the images are above other content */
+}
+
+.bottom-left-img {
+    width: 90px;
+    bottom: 10px; /* Adjust the distance from the bottom */
+    left: 10px; /* Adjust the distance from the left */
+}
+
+.bottom-right-img {
+    width: 70px;
+    bottom: 10px; /* Adjust the distance from the bottom */
+    right: 10px; /* Adjust the distance from the right */
+}
+
+.roster-left-img {
+    width: 50px;
+    bottom: 10px; /* Adjust the distance from the bottom */
+    left: 10px; /* Adjust the distance from the left */
+}
+
+.roster-right-img {
+    width: 60px;
+    bottom: 10px; /* Adjust the distance from the bottom */
+    right: 10px; /* Adjust the distance from the right */
+}
+
+.transition-fade {
+    opacity: 1;
+    transition: 500ms;
+    transform: translateX(0);
+    transform-origin: left;
+}
+
+html.is-animating .transition-fade{
+    opacity: 1;
+    transform: translateX(100%);
+}
+
+html.is-leaving .transition-fade {
+    opacity: 0;
+    transform: translateX(0);
+}
+
+@media (max-height: 400px) {
+    p {
+        font-size: 10px;
+        padding-left: 10px;
+    }
+    
+    .loading-text {
+        font-size: 10px;
+    }
+
+    .loading-container {
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .loading-progress {
+        height: 15px;
+    }
+
+    .bottom-right {
+        right: 10px;
+    }
+
+    .bio {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    p {
+        font-size: 10px;
+        padding-left: 10px;
+    }
+    
+    .loading-text {
+        font-size: 10px;
+    }
+
+    .loading-container {
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .loading-progress {
+        height: 15px;
+    }
+
+    .bottom-right {
+        right: 10px;
+    }
+
+    .bio {
+        font-size: 16px;
+    }
+
+    .highlight-credits {
+        font-size: 10px;
+    }
+
+    .highlight-credits-back {
+        font-size: 12px;
+    }
+    
+}
+
+@media (max-width: 700px) {
+
+    .card-container {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 800px) {
+    .bio-box {
+        max-width: 100%; /* Take up the full width */
+        padding: 0 20px; /* Add some padding for better readability */
+    }
+
+}
