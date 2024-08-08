@@ -804,6 +804,7 @@ html.is-leaving .transition-fade {
 
     .card:hover .card-inner {
         transform: none;
+        transition: none;
     }
     
 }
