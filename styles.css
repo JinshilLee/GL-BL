@@ -664,7 +664,6 @@ body.menu-open .card-inner {
     opacity: 0.5;
 }
 
-
 .highlight-credits {
     position: relative;
     font-family: "home-video";
@@ -681,53 +680,6 @@ body.menu-open .card-inner {
     color: black;
     background-color: white;
     padding: 2px;
-}
-
-.corner-image {
-    position: absolute; /* Adjust the size as needed */
-    height: 50px; /* Adjust the size as needed */
-    z-index: 1000; /* Ensure the images are above other content */
-}
-
-.bottom-left-img {
-    width: 90px;
-    bottom: 10px; /* Adjust the distance from the bottom */
-    left: 10px; /* Adjust the distance from the left */
-}
-
-.bottom-right-img {
-    width: 70px;
-    bottom: 10px; /* Adjust the distance from the bottom */
-    right: 10px; /* Adjust the distance from the right */
-}
-
-.roster-left-img {
-    width: 50px;
-    bottom: 10px; /* Adjust the distance from the bottom */
-    left: 10px; /* Adjust the distance from the left */
-}
-
-.roster-right-img {
-    width: 60px;
-    bottom: 10px; /* Adjust the distance from the bottom */
-    right: 10px; /* Adjust the distance from the right */
-}
-
-.transition-fade {
-    opacity: 1;
-    transition: 500ms;
-    transform: translateX(0);
-    transform-origin: left;
-}
-
-html.is-animating .transition-fade{
-    opacity: 1;
-    transform: translateX(100%);
-}
-
-html.is-leaving .transition-fade {
-    opacity: 0;
-    transform: translateX(0);
 }
 
 @media (max-height: 400px) {
@@ -819,6 +771,10 @@ html.is-leaving .transition-fade {
 
     .card:hover .card-inner {
         transform: none;
+        transition: none;
+    }
+
+        .card:hover .card-link::after {
         transition: none;
     }
 }
