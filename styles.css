@@ -772,6 +772,8 @@ body.menu-open .card-inner {
     .card:hover .card-inner {
         transform: none;
         transition: none;
+
+        pointer-events: none;
     }
 
         .card:hover .card-link::after {
