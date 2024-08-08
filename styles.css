@@ -595,7 +595,7 @@ body.menu-open .card-inner {
     flex-wrap: wrap;
     gap: 60px; /* Space between cards */
     justify-content: center; /* Aligns the top of the images */
-    margin-top: 15px;
+    margin-top: 55px;
 }
 
 .bio {
@@ -793,20 +793,6 @@ html.is-leaving .transition-fade {
         font-size: 12px;
     }
 
-    .corner-image, .bottom-left-img, .bottom-right-img, .roster-left-img, .roster-right-img {
-        display: none;
-    }
-
-    .card-inner {
-        transition: none;
-        transform: none;
-    }
-
-    .card:hover .card-inner {
-        transform: none;
-        transition: none;
-    }
-    
 }
 
 @media (max-width: 700px) {
@@ -822,4 +808,17 @@ html.is-leaving .transition-fade {
         padding: 0 20px; /* Add some padding for better readability */
     }
 
+}
+
+@media (orientation: portrait) {
+    
+    .card-inner {
+        transition: none;
+        transform: none;
+    }
+
+    .card:hover .card-inner {
+        transform: none;
+        transition: none;
+    }
 }
