@@ -766,15 +766,9 @@ body.menu-open .card-inner {
     
     .card-inner {
         transition: none;
-        transform: none;
     }
 
     .card:hover .card-inner {
-        transform: none;
-        transition: none;
-    }
-
-    .card:hover .card-link::after {
         transition: none;
     }
 
