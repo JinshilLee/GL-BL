@@ -793,12 +793,17 @@ html.is-leaving .transition-fade {
         font-size: 12px;
     }
 
-    .corner-image {
+    .corner-image, .bottom-left-img, .bottom-right-img, .roster-left-img, .roster-right-img {
         display: none;
     }
 
     .card-inner {
         transition: none;
+        transform: none;
+    }
+
+    .card:hover .card-inner {
+        transform: none;
     }
     
 }
