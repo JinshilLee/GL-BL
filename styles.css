@@ -766,9 +766,11 @@ body.menu-open .card-inner {
     
     .card-inner {
         transition: none; /* Disable transition */
+        transform: none;
     }
 
     .card:hover .card-inner {
         transform: none; /* Prevent flipping */
+        transitions: none;
     }
 }
