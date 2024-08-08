@@ -792,6 +792,14 @@ html.is-leaving .transition-fade {
     .highlight-credits-back {
         font-size: 12px;
     }
+
+    .corner-image {
+        display: none;
+    }
+
+    .card-inner {
+        transition: none;
+    }
     
 }
 
