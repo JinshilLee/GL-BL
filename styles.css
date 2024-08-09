@@ -49,6 +49,7 @@ body::after{
     border: 4px solid beige;
     position: relative;
     z-index: 3;
+    height: 100%;
 }
 
 .border-home {
