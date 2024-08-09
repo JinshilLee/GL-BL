@@ -114,7 +114,7 @@ body::after{
     width: 300px;
     height: 300px;
     z-index: -2;
-    object-fit: fill; /* Use cover to fill the screen while maintaining aspect ratio */
+    object-fit: cover; /* Use cover to fill the screen while maintaining aspect ratio */
     opacity: 0.5;
 }
 
