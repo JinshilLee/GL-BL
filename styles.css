@@ -102,9 +102,8 @@ body::after{
     z-index: -2;
     object-fit: cover;
     opacity: 0.5;
-    border-radius: 20px;
     animation-name: logo-spinning;
-    animation-duration: 4s;
+    animation-duration: 9s;
 }
 
 #replacement-image {
